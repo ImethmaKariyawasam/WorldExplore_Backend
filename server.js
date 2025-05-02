@@ -10,7 +10,10 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: [
+    'http://localhost:3000', // Local development
+    'https://your-frontend-url.vercel.app' // Production frontend URL
+  ],
   credentials: true
 }));
 
